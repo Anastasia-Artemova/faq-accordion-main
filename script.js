@@ -16,15 +16,17 @@ questions.forEach((question) => {
 });
 
 
+
 buttons.forEach((button) =>{
+    let checkUp = true;
     button.addEventListener('click', function(){
-        if(button.style.backgroundImage == "url('assets/images/icon-plus.svg')"){
+        if(checkUp){
             button.style.backgroundImage = "url('assets/images/icon-minus.svg')";
         }
         else {
             button.style.backgroundImage = "url('assets/images/icon-plus.svg')";
         }
-
+        checkUp = !checkUp;
         show_answer(button.previousElementSibling);
         
     });
